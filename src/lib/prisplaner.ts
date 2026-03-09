@@ -1,0 +1,56 @@
+import type { Prisplan } from "@/types";
+
+export const PRISPLANER: Prisplan[] = [
+  {
+    id: "gratis",
+    name: "Gratis",
+    price: 0,
+    interval: "gratis",
+    description: "Se var dina uppgifter finns — utan att betala.",
+    features: [
+      { text: "Genomsökning av 5 tjänster", included: true },
+      { text: "Se var uppgifterna finns", included: true },
+      { text: "Manuella opt-out-guider", included: true },
+      { text: "Automatisk opt-out-begäran", included: false },
+      { text: "Månatlig bevakning", included: false },
+      { text: "Mallbibliotek ingår", included: false },
+      { text: "IMY-klagomålshjälp", included: false },
+    ],
+  },
+  {
+    id: "skydd",
+    name: "Skydd",
+    price: 59,
+    interval: "månad",
+    description: "Vi sköter allt. Automatisk radering + löpande bevakning.",
+    stripePriceId: process.env.STRIPE_PRICE_SKYDD || "",
+    featured: true,
+    badge: "Populärast",
+    features: [
+      { text: "Genomsökning av 25+ tjänster", included: true },
+      { text: "Automatisk opt-out-begäran", included: true },
+      { text: "Månatlig bevakning & återradering", included: true },
+      { text: "Komplett mallbibliotek ingår", included: true },
+      { text: "E-postaviseringar vid fynd", included: true },
+      { text: "IMY-klagomålshjälp", included: true },
+      { text: "Familjemedlemmar ingår", included: false },
+    ],
+  },
+  {
+    id: "familj",
+    name: "Familj",
+    price: 149,
+    interval: "månad",
+    description: "Skydda hela familjen. Upp till 5 personer.",
+    stripePriceId: process.env.STRIPE_PRICE_FAMILJ || "",
+    features: [
+      { text: "Allt i Skydd-planen", included: true },
+      { text: "Upp till 5 familjemedlemmar", included: true },
+      { text: "Gemensam översiktsdashboard", included: true },
+      { text: "Prioriterad handläggning", included: true },
+      { text: "GDPR-rådgivning via e-post", included: true },
+      { text: "Dedikerad kontaktperson", included: true },
+      { text: "Telefonrådgivning (GDPR)", included: true },
+    ],
+  },
+];
