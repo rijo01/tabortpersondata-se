@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: #080c14;
+  color: #f1f5f9;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111827; }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+
+/* Selection */
+::selection { background: #0ea5e9; color: white; }
+
+/* Prose */
+.prose { max-width: 72ch; line-height: 1.8; color: #94a3b8; }
+.prose h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: #f1f5f9; margin: 2.5rem 0 1rem; letter-spacing: -0.02em; }
+.prose h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #e2e8f0; margin: 2rem 0 .75rem; }
+.prose p { margin-bottom: 1.25rem; }
+.prose ul { list-style: none; padding: 0; margin-bottom: 1.25rem; }
+.prose ul li { padding-left: 1.5rem; position: relative; margin-bottom: .5rem; }
+.prose ul li::before { content: '→'; position: absolute; left: 0; color: #0ea5e9; font-weight: 700; }
+.prose strong { color: #f1f5f9; font-weight: 600; }
+.prose a { color: #0ea5e9; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Glass card */
+.glass {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+}
+
+.glass-light {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Glow */
+.glow-accent { box-shadow: 0 0 40px rgba(14,165,233,0.15), 0 0 80px rgba(14,165,233,0.05); }
+.glow-accent-sm { box-shadow: 0 0 20px rgba(14,165,233,0.2); }
